@@ -1,5 +1,5 @@
 {
-  "name": "air-quality-app-aqual",
+  "name": "breathe-healthy",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,8 +7,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "air-quality-app-aqual": "file:",
-    "axios": "^0.27.2",
+    "axios": "^1.1.3",
+    "breathe-healthy": "file:",
     "chart.js": "^3.9.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

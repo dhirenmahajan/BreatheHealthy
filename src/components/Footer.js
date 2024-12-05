@@ -1,24 +1,24 @@
 // src/components/Footer.js
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => (
-  <footer className="flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-black">
-    {/* Return to Home Button */}
-    <Link to="/" className="font-Montserrat text-white font-black text-2xl tracking-widest">
-      Return to Home
-    </Link>
-
+  <footer className="mt-6 flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-black">
     {/* Centered Text */}
-    <div className="text-white text-sm mt-2 md:mt-0">
+    <div className="text-white text-sm mb-2 md:mb-0">
       App made by Dhiren Mahajan
     </div>
 
     {/* Download Buttons */}
-    <div className="flex space-x-4 mt-2 md:mt-0">
+    <div className="flex space-x-4">
       {/* App Store Button */}
-      <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.apple.com/app-store/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download on the App Store"
+        className="focus:outline-none focus:ring-2 focus:ring-white"
+      >
         <img
           src="/img/appstore.png"
           alt="Download on the App Store"
@@ -27,7 +27,13 @@ const Footer = () => (
       </a>
 
       {/* Google Play Store Button */}
-      <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://play.google.com/store"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get it on Google Play"
+        className="focus:outline-none focus:ring-2 focus:ring-white"
+      >
         <img
           src="/img/playstore.png"
           alt="Get it on Google Play"

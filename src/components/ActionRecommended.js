@@ -45,7 +45,7 @@ const ActionRecommended = () => {
   return (
     <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col justify-center items-start drop-shadow">
       {/* Header with Bottom Border */}
-      <div className="text-lg font-medium text-gray-600 pb-3 border-b border-solid border-gray-300 px-3 w-full">
+      <div className="text-lg font-medium text-black-600 pb-3 border-b border-solid border-gray-300 px-3 w-full">
         <h3 className="px-1">Action Recommended</h3>
       </div>
       {/* Content */}

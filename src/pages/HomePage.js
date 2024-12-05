@@ -84,7 +84,7 @@ const HomePage = () => {
       <div className="flex-grow">
         {/* Home Section */}
         <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col justify-center items-start drop-shadow">
-          <div className="text-lg font-medium text-gray-600 pb-3 border-b border-solid border-gray-300 px-3 w-full">
+          <div className="text-lg font-medium text-Black-600 pb-3 border-b border-solid border-gray-300 px-3 w-full">
             <h3 className="px-1">Home</h3>
           </div>
           <div className="px-4 pt-3">
@@ -102,7 +102,7 @@ const HomePage = () => {
         <div>
           <div className="bg-white rounded-2xl drop-shadow-sm mt-6 pt-4 pb-2 font-Roboto">
             <div className="flex justify-between pb-3 border-b border-solid border-gray-300 px-6">
-              <h3 className="text-lg font-medium text-gray-600">Other Major Cities</h3>
+              <h3 className="text-lg font-medium text-black-600">Other Major Cities</h3>
             </div>
             <div>
               <ul className="pt-2 px-6 w-full font-Roboto text-sm text-gray-400 font-bold grid grid-cols-2 gap-2">

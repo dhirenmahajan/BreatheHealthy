@@ -49,7 +49,7 @@ const ActionRecommended = () => {
         <h3 className="px-1">Action Recommended</h3>
       </div>
       {/* Content */}
-      <div className="px-4 pt-3">
+      <div className="font-Roboto pt-5 font-bold px-4 ">
         <p>{getRecommendedAction(aqiValue)}</p>
       </div>
     </div>

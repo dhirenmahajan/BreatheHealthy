@@ -51,7 +51,7 @@ const PollutantDetails = () => {
         >
           {pollutantDetails.map((pollutant) => (
             <div key={pollutant.id} className="px-2">
-              <div className="bg-gray-100 rounded-lg p-4 h-full flex flex-col justify-center">
+              <div className="bg-gray-100 rounded-lg p-4 h-full flex flex-col justify-center max-h-[80px]">
                 <h4 className="text-xl font-semibold text-black-700 mb-2">{pollutant.name}</h4>
                 <p className="">{pollutant.description}</p>
               </div>

@@ -35,15 +35,23 @@ const DetailsSummary = ({
               </small>
             </div>
           </div>
-          <p className=" font-Roboto pt-5 font-bold">
+          <p className="font-Roboto pt-5 font-bold">
             Air Quality is
             {' '}
-            <span style={{ color: `${filter.borderColor}` }}>
+            <span
+              style={{
+                color: `${filter.borderColor}`,
+                backgroundColor: 'yellow',
+                padding: '0 4px',
+                borderRadius: '4px',
+              }}
+            >
               {filter.rating}
             </span>
             {' '}
             at the moment
           </p>
+
           {summary ? (
             <p className="pt-3 font-Roboto">{filter.comment}</p>
           ) : null}

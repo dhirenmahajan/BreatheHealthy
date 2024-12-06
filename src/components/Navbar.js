@@ -124,7 +124,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={closeAQIModal}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
+              className="absolute top-3 right-4 text-gray-600 focus:outline-none hover:bg-red-500 p-1"
               aria-label="Close AQI Map Modal"
             >
               &times;
@@ -156,7 +156,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={closeFAQModal}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none hover:bg-red-500 p-1"
               aria-label="Close FAQ Modal"
             >
               &times;

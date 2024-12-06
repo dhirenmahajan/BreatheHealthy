@@ -1,5 +1,3 @@
-// src/components/PollutantDetails.js
-
 import React from 'react';
 import Slider from 'react-slick';
 import { pollutantDetails } from '../data/apiData';
@@ -37,7 +35,7 @@ const PollutantDetails = () => {
 
   return (
     <div className="bg-white rounded-2xl drop-shadow-sm mt-6 pt-4 pb-6 font-Roboto">
-      <div className="flex justify-between pb-3 border-b border-solid border-gray-300 px-6">
+      <div className="flex justify-center items-center pb-3 border-b border-solid border-gray-300 px-6">
         <h3 className="text-lg font-medium text-black-600">Pollutant Details</h3>
       </div>
       <div className="px-6 mt-4">
@@ -51,7 +49,7 @@ const PollutantDetails = () => {
         >
           {pollutantDetails.map((pollutant) => (
             <div key={pollutant.id} className="px-2">
-              <div className="bg-gray-100 rounded-lg p-4 h-full flex flex-col justify-center max-h-[80px]">
+              <div className="flex justify-center items-center bg-gray-100 rounded-lg p-4 h-full flex flex-col justify-center max-h-[80px]">
                 <h4 className="text-xl font-semibold text-black-700 mb-2">{pollutant.name}</h4>
                 <p className="">{pollutant.description}</p>
               </div>

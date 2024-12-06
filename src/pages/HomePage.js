@@ -1,13 +1,12 @@
-// src/pages/HomePage.js
-
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ReactSpeedometer from 'react-d3-speedometer'; // Import the speedometer
 import DetailsSummary from '../components/DetailsSummary';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ActionRecommended from '../components/ActionRecommended'; // Import the new component
-import PollutantDetails from '../components/PollutantDetails'; // Import PollutantDetails
+import ActionRecommended from '../components/ActionRecommended';
+import PollutantDetails from '../components/PollutantDetails';
 import {
   fetchAirQuality,
   getAirQuality,
@@ -25,12 +24,9 @@ const HomePage = () => {
   const status = useSelector(getStatus);
   const error = useSelector(getError);
 
-  // Define Cincinnati as the default location
   const defaultLocation = otherLocation.find((loc) => loc.name === 'Cincinnati');
 
-  // Fetch air quality data on component mount
   useEffect(() => {
-    // Fetch default location only if no location is selected
     if (!selectedLocation && defaultLocation) {
       dispatch(fetchAirQuality(defaultLocation));
     }
@@ -42,16 +38,14 @@ const HomePage = () => {
         setAddRequestStatus('pending');
         dispatch(fetchAirQuality(location)).unwrap();
       } catch (err) {
-        // Optionally, handle the error in the UI
+        // Handle error
       } finally {
         setAddRequestStatus('idle');
       }
     }
   };
 
-  // Determine what content to display based on status
   let content;
-
   if (status === 'loading') {
     content = <p className="text-gray-600">Loading air quality data...</p>;
   } else if (status === 'failed') {
@@ -75,6 +69,9 @@ const HomePage = () => {
     content = null;
   }
 
+  // Derive AQI value
+  const aqiValue = airQuality?.main?.aqi || 1; // Default to 1 if AQI is not available
+
   return (
     <div className="flex flex-col min-h-screen px-4">
       {/* Navigation Bar */}
@@ -83,12 +80,34 @@ const HomePage = () => {
       {/* Main Content */}
       <div className="flex-grow">
         {/* Home Section */}
-        <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col justify-center items-start drop-shadow ">
-          <div className="text-lg font-medium text-Black-600 pb-3 border-b border-solid border-gray-300 px-3 w-full ">
+        <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col drop-shadow">
+          {/* Section Title */}
+          <div className="text-lg font-medium text-black-600 pb-3 border-b border-solid border-gray-300 w-full flex justify-center">
             <h3 className="px-1">Last Searched Location</h3>
           </div>
-          <div className="px-4 pt-3">
-            {content}
+
+          {/* Section Content */}
+          <div className="px-4 pt-3 flex flex-col md:flex-row items-center justify-between">
+            {/* Left: Speedometer */}
+            <div className="flex-1 flex justify-center items-center">
+              <ReactSpeedometer
+                value={aqiValue}
+                minValue={1}
+                maxValue={5}
+                segments={5}
+                needleColor="steelblue"
+                startColor="green"
+                endColor="red"
+                width={250}
+                height={150}
+                currentValueText="AQI Level"
+                textColor="black"
+              />
+            </div>
+            {/* Right: Content */}
+            <div className="flex-1 flex justify-center items-center">
+              {content}
+            </div>
           </div>
         </div>
 
@@ -101,7 +120,7 @@ const HomePage = () => {
         {/* Other Major Cities */}
         <div>
           <div className="bg-white rounded-2xl drop-shadow-sm mt-6 pt-4 pb-2 font-Roboto">
-            <div className="flex justify-between pb-3 border-b border-solid border-gray-300 px-6">
+            <div className="flex justify-center pb-3 border-b border-solid border-gray-300 px-6">
               <h3 className="text-lg font-medium text-black-600">Other Major Cities</h3>
             </div>
             <div>
@@ -122,7 +141,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        {/* Removed the 'Search other Locations' link from the bottom */}
       </div>
 
       {/* Footer */}

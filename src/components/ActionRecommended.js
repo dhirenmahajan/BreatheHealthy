@@ -1,5 +1,3 @@
-// src/components/ActionRecommended.js
-
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getAirQuality, getStatus, getError } from '../redux/airQualitySlice';
@@ -21,16 +19,16 @@ const ActionRecommended = () => {
 
   if (status === 'loading') {
     return (
-      <div className="mt-6 rounded-xl bg-white p-6 flex flex-col justify-center items-start drop-shadow">
-        <p className="text-gray-600">Loading recommended actions...</p>
+      <div className="mt-6 rounded-xl bg-white p-6 flex flex-col justify-center items-center drop-shadow">
+        <p className="text-gray-600 text-center">Loading recommended actions...</p>
       </div>
     );
   }
 
   if (status === 'failed') {
     return (
-      <div className="mt-6 rounded-xl bg-white p-6 flex flex-col justify-center items-start drop-shadow">
-        <p className="text-red-500">
+      <div className="mt-6 rounded-xl bg-white p-6 flex flex-col justify-center items-center drop-shadow">
+        <p className="text-red-500 text-center">
           Error:
           {error}
         </p>
@@ -43,13 +41,13 @@ const ActionRecommended = () => {
   }
 
   return (
-    <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col justify-center items-start drop-shadow">
+    <div className="mt-6 rounded-xl bg-white py-2 pb-4 mb-4 flex flex-col justify-center items-center drop-shadow">
       {/* Header with Bottom Border */}
-      <div className="text-lg font-medium text-black-600 pb-3 border-b border-solid border-gray-300 px-3 w-full">
-        <h3 className="px-1">Action Recommended</h3>
+      <div className="text-lg font-medium text-black-600 pb-3 border-b border-solid border-gray-300 w-full flex justify-center">
+        <h3 className="text-center">Action Recommended</h3>
       </div>
       {/* Content */}
-      <div className="font-Roboto pt-5 font-bold px-4 ">
+      <div className="font-Roboto pt-5 font-bold px-4 text-center">
         <p>{getRecommendedAction(aqiValue)}</p>
       </div>
     </div>
